@@ -1,0 +1,24 @@
+{
+	"components": {
+		"motion_position": {
+			"random_velocity": {
+				"magnitude": "Math.random() * 0.2 + 0.2",
+				"bias": {
+					"direction": {
+						"x": 0,
+						"y": 0,
+						"z": 1
+					},
+					"spread": 0.2
+				}
+			},
+			"acceleration": {
+				"x": 0,
+				"y": -0.02,
+				"z": 0
+			},
+			"drag": "0.002",
+			"restitution": "0.6"
+		}
+	}
+}

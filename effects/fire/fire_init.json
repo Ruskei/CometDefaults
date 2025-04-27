@@ -1,0 +1,20 @@
+{
+  "components": {
+    "on_emitter_init": [
+      {
+        "emitter": [
+          "fire_bright",
+          "fire_spark",
+          "fire_smoke"
+        ],
+        "space": "parent_emitter"
+      }
+    ],
+    "emitter_rate_instant": {
+      "amount": 0
+    },
+    "timed_emitter_lifetime": {
+      "expiration_expression": "emitter.age - 200.0"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+	"macros": {
+		"__size__": "(particle_variable.random * 2 + 4)",
+		"__size_factor__": {
+			"type": "catmull",
+			"input": "particle.age",
+			"x": [0.0, 30.0],
+			"y": [1.0, 2.0]
+
+		},
+		"__wind__": "0.012",
+		"__turbulence__": "0.022",
+		"__color__": "(particle_variable.random3 * 0.3 + 0.5)",
+		"__transparency__": "(particle_variable.random4 * 0.2 + 0.8)"
+	},
+	"components": {
+		"randoms": {
+			"particle": 4
+		},
+		"default_environment_data": {
+			"angle": "0"
+		},
+		"expression_scale": {
+			"x": "__size__ * __size_factor__",
+			"y": "__size__ * __size_factor__"
+		},
+		"motion_position": {
+			"random_velocity": {
+				"magnitude": 0,
+				"bias": {
+					"direction": {
+						"y": 1.0
+					},
+					"spread": 0.15
+				}
+			},
+			"acceleration": {
+				"x": "Math.cos(emitter_variable.angle) * __wind__ + (Math.random() - 0.5) * __turbulence__",
+				"z": "Math.sin(emitter_variable.angle) * __wind__ + (Math.random() - 0.5) * __turbulence__",
+				"y": "0.01 + (Math.random() - 0.5) * __turbulence__"
+			},
+			"drag": "0.1"
+		},
+		"constant_color": {
+			"color": "new Color(__color__, __color__, __color__, __transparency__)"
+		},
+		"emitter_rate_steady": {
+			"spawn_rate": "(emitter.age < 10) ? 3 : 0"
+		},
+		"particle_lifetime_expression": {
+			"max_lifetime": "particle_variable.random2 * 20 + 10"
+		}
+	}
+}

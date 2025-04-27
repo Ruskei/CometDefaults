@@ -1,0 +1,47 @@
+{
+  "components": {
+    "on_emitter_init": [
+      {
+        "expressions": [
+          "emitter_variable.size=0.03;emitter_variable.lifetime=2.2"
+        ]
+      }
+    ],
+    "emitter_rate_steady": {
+      "spawn_rate": "130.0",
+      "max_particles": "1000.0"
+    },
+    "expression_emitter_lifetime": {
+      "activation_expression": "20.0"
+    },
+    "initial_expression_position": {
+      "x": "Math.sin(((emitter.age / 20.0) * 70.0 - 90.0) * Math.PI / 180.0) * 2.0",
+      "y": "(Math.random() * (1.0 - -1.0) + -1.0)",
+      "z": "0.0"
+    },
+    "motion_position": {
+      "acceleration": {
+        "x": "(particle_variable.random3 - 0.5) / 256.0",
+        "y": "-1.0 / 256.0",
+        "z": "(particle_variable.random4 - 0.5) / 256.0"
+      },
+      "drag": "0.01"
+    },
+    "randoms": {
+      "emitter": 0,
+      "particle": 4
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": "particle_variable.random * emitter_variable.lifetime * 20.0"
+    },
+    "expression_scale": {
+      "x": "emitter_variable.size * (particle_variable.random * emitter_variable.lifetime - (particle.age / 20.0)) * 8.0",
+      "y": "emitter_variable.size * (particle_variable.random * emitter_variable.lifetime - (particle.age / 20.0)) * 8.0",
+      "z": "1.0"
+    },
+    "constant_sprite": {
+      "sprite": "particles_40_80_8_8"
+    }
+  },
+  "macros": {}
+}

@@ -1,0 +1,20 @@
+{
+  "parent": "item/structure_block",
+  "textures": {
+    "layer0": "item/structure_block"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1170671591
+      },
+      "model": "item/p/thingy"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1589464021
+      },
+      "model": "item/p/thingy2"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "macros": {
+    "speed": "0.4",
+    "life": "80.0",
+    "__size__": {
+      "type": "catmull",
+      "input": "particle.age",
+      "x": [
+        0.0,
+        10.0,
+        25.0
+      ],
+      "y": [
+        3.0,
+        2.15,
+        1.0
+      ]
+    },
+    "factor": "(particle_variable.random * 0.4 + 0.8)",
+    "fire_spread": "0.05"
+  },
+  "components": {
+    "randoms": {
+      "particle": 1
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": 500
+    },
+    "_emitter_rate_steady": {
+      "spawn_rate": "10.0"
+    },
+    "emitter_rate_instant": {
+      "amount": 1
+    },
+    "_initial_expression_position": {
+      "x": "(Math.random() - 0.5) * 0.3",
+      "y": "(Math.random()) * 0.3",
+      "z": "(Math.random() - 0.5) * 0.3"
+    },
+    "expression_position": {
+      "x": 0,
+      "y": "Math.sin(particle.age * 0.1)",
+      "z": 0
+    },
+    "_expression_scale": {
+      "x": "particle.age * 0.1",
+      "y": "particle.age * 0.1",
+      "z": 1
+    },
+    "__gradient_color": {
+      "interpolant": "particle.age",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(255, 255, 255, 255)"
+        },
+        {
+          "index": 50.0,
+          "color": "new Color(255, 255, 255, 0)"
+        }
+      ]
+    },
+    "_gradient_color": {
+      "interpolant": "particle.age / (particle.maxLife)",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(255, 255, 200, 255)"
+        },
+        {
+          "index": 0.05,
+          "color": "new Color(255, 255, 122, 255)"
+        },
+        {
+          "index": 0.6,
+          "color": "new Color(255, 124, 0, 255)"
+        },
+        {
+          "index": 0.8,
+          "color": "new Color(255, 0, 0, 255)"
+        },
+        {
+          "index": 1.0,
+          "color": "new Color(255, 0, 0, 25)"
+        }
+      ]
+    },
+    "timed_emitter_lifetime": {
+      "expiration_expression": "emitter.age - 100.0"
+    }
+  }
+}

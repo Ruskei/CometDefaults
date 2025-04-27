@@ -1,0 +1,59 @@
+{
+  "components": {
+    "emitter_rate_instant": {
+      "amount": "250.0"
+    },
+    "timed_emitter_lifetime": {
+      "max_lifetime": "20.0"
+    },
+    "sphere_position": {
+      "radius": "1.0",
+      "magnitude": "0.8125",
+      "direction": "outwards"
+    },
+    "motion_position": {
+      "sphere_dir": {}
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": "30.0"
+    },
+    "expression_scale": {
+      "x": "0.8",
+      "y": "0.8",
+      "z": "1.0"
+    },
+    "constant_sprite": {
+      "sprite": "square_particle"
+    },
+    "gradient_color": {
+      "interpolant": "(particle.age / 20.0) / (particle.maxLife / 20.0)",
+      "data": [
+        {
+          "index": 0.15,
+          "color": "new Color(0, 0, 0, 255)"
+        },
+        {
+          "index": 0.28,
+          "color": "new Color(186, 164, 164, 255)"
+        },
+        {
+          "index": 0.41,
+          "color": "new Color(82, 206, 36, 255)"
+        },
+        {
+          "index": 0.65,
+          "color": "new Color(242, 236, 50, 255)"
+        },
+        {
+          "index": 0.81,
+          "color": "new Color(46, 27, 198, 255)"
+        },
+        {
+          "index": 0.94,
+          "color": "new Color(0, 0, 0, 255)"
+        }
+      ]
+    }
+  },
+  "macros": {}
+}

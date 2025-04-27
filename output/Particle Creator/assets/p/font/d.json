@@ -1,0 +1,166 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "p:font/sendflash.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/particles.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/sparkle.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/line_32.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/tooltip.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/spike.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/arrow.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/crescent.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/blood.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/rhombus.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/test.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/ring.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/particle.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/bar.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/miserycat.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/particles_32_88_8_8.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/tooltip_3_4_12_9.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/particles_40_80_8_8.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

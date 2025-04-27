@@ -1,0 +1,103 @@
+{
+  "macros": {
+    "speed": "0.4",
+    "life": "80.0",
+    "__size__": {
+      "type": "catmull",
+      "input": "particle.age",
+      "x": [
+        0.0,
+        10.0,
+        25.0
+      ],
+      "y": [
+        3.0,
+        2.15,
+        1.0
+      ]
+    },
+    "factor": "(particle_variable.random * 0.4 + 0.8)",
+    "fire_spread": "0.05"
+  },
+  "components": {
+    "randoms": {
+      "particle": 1
+    },
+    "display_type": "center",
+    "_interval_update_frequency": {
+      "interval": 4
+    },
+    "emitter_rate_steady": {
+      "spawn_rate": 60
+    },
+    "initial_expression_position": {
+      "x": "(Math.random() - 0.5) * 0.3",
+      "y": "(Math.random()) * 0.3",
+      "z": "(Math.random() - 0.5) * 0.3"
+    },
+    "motion_position": {
+      "random_velocity": {
+        "magnitude": 0.03,
+        "bias": {
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "spread": 0.5
+        }
+      },
+      "acceleration": {
+        "x": "(Math.random() - 0.5) * fire_spread",
+        "y": "0.01 * Math.random() + 0.015",
+        "z": "(Math.random() - 0.5) * fire_spread"
+      },
+      "drag": "0.2",
+      "restitution": "0.5"
+    },
+    "expression_scale": {
+      "x": "__size__ * factor",
+      "y": "__size__ * factor",
+      "z": "__size__ * factor"
+    },
+    "expression_rotation": {
+      "x": "0.0",
+      "y": "0.0",
+      "z": "particle_variable.random * Math.PI * 2 + particle.age * 0.01"
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": "15.0 + particle_variable.random * 10.0"
+    },
+    "constant_sprite": {
+      "sprite": "\"particle\""
+    },
+    "gradient_color": {
+      "interpolant": "particle.age / (particle.maxLife)",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(255, 255, 200, 255)"
+        },
+        {
+          "index": 0.05,
+          "color": "new Color(255, 255, 122, 255)"
+        },
+        {
+          "index": 0.6,
+          "color": "new Color(255, 124, 0, 255)"
+        },
+        {
+          "index": 0.8,
+          "color": "new Color(255, 0, 0, 255)"
+        },
+        {
+          "index": 1.0,
+          "color": "new Color(255, 0, 0, 25)"
+        }
+      ]
+    },
+    "timed_emitter_lifetime": {
+      "expiration_expression": "emitter.age - 100.0"
+    }
+  }
+}

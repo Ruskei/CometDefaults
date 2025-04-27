@@ -1,0 +1,115 @@
+{
+  "components": {
+    "randoms": {
+      "emitter": 0,
+      "particle": 2
+    },
+    "on_emitter_init": [
+      {
+        "expressions": [
+          "emitter_variable.radius=2.5"
+        ]
+      }
+    ],
+    "emitter_rate_steady": {
+      "spawn_rate": "250.0",
+      "max_particles": "500.0"
+    },
+    "looping_emitter_lifetime": {
+      "active_time": "40.0",
+      "sleep_time": "0.0"
+    },
+    "initial_expression_position": {
+      "x": "Math.cos(((emitter.age / 20.0) * 90.0) * Math.PI / 180.0) * (2.5 - particle_variable.random2)",
+      "y": "Math.sin(((emitter.age / 20.0) * 90.0) * Math.PI / 180.0) * (2.5 - particle_variable.random2)",
+      "z": "0.0"
+    },
+    "motion_position": {
+      "acceleration": {
+        "y": "0.00390625"
+      }
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": "30.0"
+    },
+    "expression_scale": {
+      "x": "0.12 * __variable_psize__ * 8.0",
+      "y": "0.12 * __variable_psize__ * 8.0",
+      "z": "1.0"
+    },
+    "constant_sprite": {
+      "sprite": "tooltip_3_4_12_9"
+    },
+    "gradient_color": {
+      "interpolant": "__variable_rainbow__",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(215, 28, 28, 255)"
+        },
+        {
+          "index": 0.16,
+          "color": "new Color(255, 223, 0, 255)"
+        },
+        {
+          "index": 0.33,
+          "color": "new Color(8, 255, 0, 255)"
+        },
+        {
+          "index": 0.5,
+          "color": "new Color(0, 255, 255, 255)"
+        },
+        {
+          "index": 0.67,
+          "color": "new Color(0, 0, 255, 255)"
+        },
+        {
+          "index": 0.83,
+          "color": "new Color(255, 0, 255, 255)"
+        },
+        {
+          "index": 1.0,
+          "color": "new Color(226, 17, 17, 255)"
+        }
+      ]
+    }
+  },
+  "macros": {
+    "__variable_rainbow__": {
+      "type": "catmull",
+      "input": "particle_variable.random2",
+      "x": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "y": [
+        1.0,
+        0.0,
+        1.0,
+        1.18
+      ],
+      "range": "1.0"
+    },
+    "__variable_psize__": {
+      "type": "catmull",
+      "input": "(particle.age / 20.0)",
+      "x": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "y": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "range": "(particle.maxLife / 20.0)"
+    }
+  }
+}

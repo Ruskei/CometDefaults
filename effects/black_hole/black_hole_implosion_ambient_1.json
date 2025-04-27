@@ -1,0 +1,93 @@
+{
+	"macros": {
+		"drag_factor": {
+			"type": "hermite",
+			"input": "emitter.age",
+			"x": [0.0, 65.0, 78.0],
+			"y": [1.0, 0.4, 0.8]
+		},
+		"acceleration_factor": {
+			"type": "hermite",
+			"input": "emitter.age",
+			"x": [0.0, 65.0, 78.0],
+			"y": [0.1, 0.05, 0.00]
+		},
+		"attractor_mass": {
+			"type": "hermite",
+			"input": "emitter.age",
+			"x": [0.0, 10.0, 30.0, 40.0, 65.0, 75.0],
+			"y": [0.001, 0.01, 0.07, 0.2, 0.4, 0.6]
+		}
+	},
+	"components": {
+		"randoms": {
+			"particle": 4
+		},
+		"on_emitter_init": [
+			{
+				"expressions": [ "emitter_variable.x = 4;" ]
+			}
+		],
+		"sphere_position": {
+			"radius": "emitter_variable.x * (1.0 - emitter.age / 100.0)"
+		},
+		"particle_lifetime_expression": {
+			"expiration_expression": "emitter.age - 78.0"
+		},
+		"emitter_rate_steady": {
+			"spawn_rate": "40.0 + emitter.age"
+		},
+		"attractor_position": {
+			"type": "gravity_linear",
+			"factor": 1,
+			"attractors": [
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"mass": "attractor_mass",
+					"radius": 0.1
+				}
+			],
+			"on_hit_attractor": [
+				"particle_die"
+			]
+		},
+		"motion_position": {
+			"random_velocity": {
+				"magnitude": "0.0"
+			},
+			"acceleration": {
+				"x": "(particle_variable.random2 * 2.0 - 1.0) * acceleration_factor",
+				"y": "(particle_variable.random3 * 2.0 - 1.0) * acceleration_factor",
+				"z": "(particle_variable.random4 * 2.0 - 1.0) * acceleration_factor"
+			},
+			"drag": "drag_factor"
+		},
+		"timed_emitter_lifetime": {
+			"expiration_expression": "emitter.age - 70.0"
+		},
+		"gradient_color": {
+			"interpolant": "particle.age",
+			"data": [
+				{
+					"index": 0.0,
+					"color": "new Color(163, 255, 254, 24)"
+				},
+				{
+					"index": 25.0,
+					"color": "new Color(163, 255, 254, 255)"
+				},
+				{
+					"index": 30.0,
+					"color": "new Color(255, 255, 255, 255)"
+				}
+			]
+		},
+		"expression_scale": {
+			"x": "particle_variable.random * 2.0",
+			"y": "particle_variable.random * 2.0",
+			"z": "1"
+		}
+	}
+}

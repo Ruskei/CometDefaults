@@ -1,0 +1,73 @@
+{
+	"macros": {
+		"attractor_mass": {
+			"type": "hermite",
+			"input": "emitter.age",
+			"x": [0.0, 70.0, 80.0, 90.0, 115.0, 125.0],
+			"y": [0.0, 0.0, 0.0, 0.0, 4.0, 10.0]
+		}
+	},
+	"components": {
+		"randoms": {
+			"particle": 1
+		},
+		"particle_lifetime_expression": {
+			"expiration_expression": "emitter.age - 135.0"
+		},
+		"emitter_rate_instant": {
+			"amount": 100,
+			"offset": 82
+		},
+		"attractor_position": {
+			"attractors": [
+				{
+					"x": 0,
+					"y": 0,
+					"z": 0,
+					"mass": "attractor_mass",
+					"radius": 0.5
+				}
+			],
+			"on_hit_attractor": [
+				"particle_die"
+			]
+		},
+		"motion_position": {
+			"random_velocity": {
+				"magnitude": "particle_variable.random * 1.5"
+			},
+			"acceleration": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"drag": "0.1"
+		},
+		"timed_emitter_lifetime": {
+			"expiration_expression": "emitter.age - 115.0"
+		},
+		"gradient_color": {
+			"interpolant": "particle.age",
+			"data": [
+				{
+					"index": 0.0,
+					"color": "new Color(255, 255, 255, 255)"
+				},
+				{
+					"index": 1.0,
+					"color": "new Color(163, 255, 214, 255)"
+				},
+				{
+					"index": 50.0,
+					"color": "new Color(163, 255, 214, 125)"
+				}
+			]
+		},
+		"expression_scale": {
+			"x": "particle_variable.random * 3.5",
+			"y": "particle_variable.random * 3.5",
+			"z": 1
+		}
+	}
+}
+

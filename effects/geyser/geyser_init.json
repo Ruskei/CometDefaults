@@ -1,0 +1,50 @@
+{
+	"macros": {
+		"_size_": "particle_variable.random * 2 + 4",
+		"__color__": "(particle_variable.random3 * 0.2 + 0.8)",
+		"__transparency__": "(particle_variable.random4 * 0.2 + 0.8)"
+	},
+	"components": {
+		"default_environment_data": {
+			"angle": "0"
+		},
+		"randoms": {
+			"particle": 4
+		},
+		"on_particle_init": [
+			{
+				"emitter": "geyser_secondary",
+				"space": "parent_particle"
+			}
+		],
+		"motion_position": {
+			"random_velocity": {
+				"magnitude": "particle_variable.random2 * 0.6 + 0.2",
+				"bias": {
+					"direction": {
+						"y": 1.0
+					},
+					"spread": 0.15
+				}
+			},
+			"acceleration": {
+				"y": -0.05
+			},
+			"drag": 0.02,
+			"restitution": "0.5"
+		},
+		"particle_lifetime_expression": {
+			"max_lifetime": "particle_variable.random2 * 12 + 4"
+		},
+		"constant_color": {
+			"color": "new Color(__color__, __color__, __color__, __transparency__)"
+		},
+		"emitter_rate_steady": {
+			"spaw_rate": 10
+		},
+		"expression_scale": {
+			"x": "_size_",
+			"y": "_size_"
+		}
+	}
+}

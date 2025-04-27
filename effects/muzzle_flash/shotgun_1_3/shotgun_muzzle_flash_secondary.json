@@ -1,0 +1,51 @@
+{
+	"macros": {
+		"_size_": {
+			"type": "catmull",
+			"input": "particle.age",
+			"x": [0.0, 6.0],
+			"y": [1.0, 0.0]
+		}
+	},
+	"components": {
+		"default_environment_data": {
+			"start_color": "#feedac",
+			"end_color": "#37fc965e"
+		},
+		"emitter_rate_instant": {
+			"amount": 5
+		},
+		"expression_scale": {
+			"x": "_size_",
+			"y": "_size_",
+			"z": "_size_"
+		},
+		"motion_position": {
+			"random_velocity": {
+				"bias": {
+					"direction": {
+						"x": 0,
+						"y": 0,
+						"z": 1
+					},
+					"spread": 0.6
+				},
+				"magnitude": "Math.random() * 0.3 + 0.5"
+			},
+			"drag": "0.03"
+		},
+		"gradient_color": {
+			"interpolant": "particle.age",
+			"data": [
+				{
+					"index": 0.0,
+					"color": "emitter_variable.start_color"
+				},
+				{
+					"index": 5.0,
+					"color": "emitter_variable.end_color"
+				}
+			]
+		}
+	}
+}
