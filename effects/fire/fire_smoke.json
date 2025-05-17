@@ -27,7 +27,7 @@
     },
     "display_type": "center",
     "emitter_rate_steady": {
-      "spawn_rate": "6.0"
+      "spawn_rate": 5
     },
     "_interval_update_frequency": {
       "interval": 5,
@@ -87,7 +87,7 @@
         },
         {
           "index": 1.1,
-          "color": "new Color(55, 55, 55, 127)"
+          "color": "new Color(55, 55, 55, 128)"
         }
       ]
     },

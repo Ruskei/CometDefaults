@@ -1,0 +1,20 @@
+{
+  "components": {
+    "display_type": "fixed",
+    "expression_scale": {
+      "x": 4,
+      "y": 4,
+      "z": 1
+    },
+    "expression_translation": {
+      "z": 2,
+      "absolute": false
+    },
+    "expression_rotation": {
+      "y": "Math.PI"
+    },
+    "emitter_rate_instant": {
+      "amount": 1
+    }
+  }
+}

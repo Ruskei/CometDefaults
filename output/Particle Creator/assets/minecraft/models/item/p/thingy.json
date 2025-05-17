@@ -4,10 +4,6 @@
     32,
     32
   ],
-  "textures": {
-    "0": "item/p/thingy",
-    "particle": "item/p/thingy"
-  },
   "elements": [
     {
       "from": [
@@ -163,5 +159,9 @@
         }
       }
     }
-  ]
+  ],
+  "textures": {
+    "0": "item/p/ifdsay",
+    "particle": "item/p/item/fdsaf/thingy"
+  }
 }

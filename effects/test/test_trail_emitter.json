@@ -1,0 +1,40 @@
+{
+  "components": {
+    "on_particle_init": [
+      {
+        "emitter": "blood_trail",
+        "space": "parent_particle"
+      }
+    ],
+    "emitter_rate_instant": {
+      "amount": 60
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": 20
+    },
+    "_expression_position": {
+      "x": "Math.cos(particle.age * 0.2)",
+      "y": "Math.sin(particle.age * 0.2)",
+      "z": 0.0
+    },
+    "motion_position": {
+      "acceleration": {
+        "x": "0.0",
+        "y": "-0.02",
+        "z": "0.0"
+      },
+      "drag": "0.0",
+      "restitution": "0.0",
+      "on_collision": [
+        {
+          "emitter": "\"blood_decal\"",
+          "offset": 0.1
+        },
+        "particle_die"
+      ]
+    },
+    "timed_emitter_lifetime": {
+      "expiration_expression": "emitter.age - 3.0"
+    }
+  }
+}

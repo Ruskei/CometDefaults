@@ -1,0 +1,25 @@
+{
+  "components": {
+    "emitter_rate_manual": {},
+    "on_emitter_init": [
+      {
+        "emitter": [
+          "neo_black_hole_sigils",
+          "neo_black_hole_crescent"
+        ]
+      }
+    ],
+    "on_emitter_timeline": {
+      "110": [
+        {
+          "emitter": [
+            "neo_black_hole_ambient2"
+          ]
+        }
+      ]
+    },
+    "timed_emitter_lifetime": {
+      "max_lifetime": 110
+    }
+  }
+}

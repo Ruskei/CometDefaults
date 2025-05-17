@@ -52,6 +52,10 @@
       "drag": "0.2",
       "restitution": "0.5"
     },
+    "constant_lightdata": {
+      "sky": 15,
+      "block": 15
+    },
     "expression_scale": {
       "x": "size",
       "y": "size",
@@ -63,7 +67,7 @@
       "z": "particle_variable.random * Math.PI * 2"
     },
     "particle_lifetime_expression": {
-      "max_lifetime": "25.0 + particle_variable.random * 40.0"
+      "max_lifetime": "15.0 + particle_variable.random * 20.0"
     },
     "constant_sprite": {
       "sprite": "\"particle\""

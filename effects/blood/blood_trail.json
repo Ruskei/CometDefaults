@@ -24,7 +24,7 @@
     },
     "display_type": "center",
     "emitter_rate_steady": {
-      "spawn_rate": "20.0"
+      "spawn_rate": 20
     },
     "expression_position": {
       "x": 0.0,

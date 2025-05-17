@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/amethyst_shard"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 100
+      },
+      "model": "item/p/thingy"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 101
+      },
+      "model": "item/p/black_hole_ring"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 102
+      },
+      "model": "item/p/thingy2"
+    }
+  ]
+}

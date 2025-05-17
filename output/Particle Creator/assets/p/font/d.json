@@ -20,11 +20,29 @@
     },
     {
       "type": "bitmap",
+      "file": "p:font/flash.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/empty.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
       "file": "p:font/sparkle.png",
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -33,7 +51,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -42,7 +60,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -51,7 +69,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -60,7 +78,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -69,7 +87,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -78,7 +96,16 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/sonic_boom_spike_1.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
       ]
     },
     {
@@ -87,7 +114,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -96,7 +123,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -105,7 +132,25 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/thick_ring.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/spiral_2.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
       ]
     },
     {
@@ -114,7 +159,43 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/minecraft_hieroglyphs.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/star_flash.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/spiral.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/half_square.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
       ]
     },
     {
@@ -123,7 +204,16 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "p:font/green_hit_flash.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
       ]
     },
     {
@@ -132,7 +222,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -141,7 +231,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -150,7 +240,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     },
     {
@@ -159,7 +249,7 @@
       "ascent": 1,
       "height": 8,
       "chars": [
-        ""
+        ""
       ]
     }
   ]

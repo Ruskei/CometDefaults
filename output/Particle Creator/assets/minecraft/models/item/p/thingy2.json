@@ -4,10 +4,6 @@
     64,
     64
   ],
-  "textures": {
-    "0": "item/p/thingy2",
-    "particle": "item/p/thingy2"
-  },
   "elements": [
     {
       "from": [
@@ -77,5 +73,9 @@
         }
       }
     }
-  ]
+  ],
+  "textures": {
+    "0": "item/p/block/thingy2",
+    "particle": "item/p/block/thingy2"
+  }
 }

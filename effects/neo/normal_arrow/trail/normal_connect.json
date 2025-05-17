@@ -1,0 +1,70 @@
+{
+  "macros": {
+    "_$size_": {
+      "type": "linear",
+      "input": "emitter.age",
+      "x": [
+        0.0,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "y": [
+        0.5,
+        1.0,
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "components": {
+    "display_type": "fixed",
+    "on_emitter_init": [
+      {
+        "expressions": [
+          "emitter_variable.yaw = Math.PI - Math.atan2(emitter_variable.delta.z, emitter_variable.delta.x)",
+          "emitter_variable.pitch = Math.atan2(emitter_variable.delta.y, Math.sqrt(emitter_variable.delta.x * emitter_variable.delta.x + emitter_variable.delta.z * emitter_variable.delta.z))",
+          "emitter_variable.rot = 0"
+        ]
+      },
+      {
+        "emitter": [
+          "normal_connect_ambient"
+        ]
+      }
+    ],
+    "emitter_rate_instant": {
+      "amount": 4
+    },
+    "on_particle_init": [
+      {
+        "expressions": [
+          "emitter_variable.rot += 0.5; particle_variable.rot = emitter_variable.rot"
+        ]
+      }
+    ],
+    "expression_rotation": {
+      "x": "Math.PI * -0.5",
+      "x_local": "emitter_variable.pitch",
+      "y_local": "emitter_variable.yaw + Math.PI * 0.5",
+      "y": "Math.PI * particle_variable.rot"
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": 7
+    },
+    "expression_scale": {
+      "x": "_$size_",
+      "y": "emitter_variable.delta.length() * 10 * (particle.age / 2)"
+    },
+    "constant_sprite": {
+      "sprite": "half_square"
+    },
+    "constant_color": {
+      "color": "new Color(78, 183, 78, 255)"
+    },
+    "constant_lightdata": {
+      "sky": 15,
+      "block": 15
+    }
+  }
+}

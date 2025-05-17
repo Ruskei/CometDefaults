@@ -1,0 +1,8 @@
+{
+  "sonic_boom": {
+    "category": "master",
+    "sounds": [
+      "p:sonic_boom"
+    ]
+  }
+}

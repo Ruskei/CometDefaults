@@ -1,0 +1,60 @@
+{
+  "components": {
+    "display_type": "fixed",
+    "default_environment_data": {
+      "color": "#71ff77",
+      "offset": 6,
+      "offset_z": 2,
+      "offset_y": -0.5
+    },
+    "emitter_rate_instant": {
+      "amount": 0
+    },
+    "on_emitter_init": [
+      {
+        "emitter": [
+          "spiral",
+          "spiral_2",
+          "flash",
+          "sonic_boom_ring"
+        ],
+        "space": "parent_emitter"
+      },
+      {
+        "emitter": [
+          "spiral",
+          "spiral_2",
+          "flash",
+          "sonic_boom_ring"
+        ],
+        "invert": true
+      }
+    ],
+    "on_emitter_timeline": {
+      "4": [
+        {
+          "sound_id": "p:sonic_boom"
+        }
+      ],
+      "21": [
+        {
+          "emitter": [
+            "sonic_boom_ring_2",
+            "sonic_boom_ring_3",
+            "sonic_boom_spike_1",
+            "sonic_boom_star_flash"
+          ]
+        },
+        {
+          "emitter": [
+            "sonic_boom_ring_2",
+            "sonic_boom_ring_3",
+            "sonic_boom_spike_1",
+            "sonic_boom_star_flash"
+          ],
+          "invert": true
+        }
+      ]
+    }
+  }
+}

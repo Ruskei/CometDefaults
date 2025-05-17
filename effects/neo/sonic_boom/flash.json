@@ -1,0 +1,53 @@
+{
+  "listed": false,
+  "macros": {
+    "_$size_": 14,
+    "_$sizefactor_": {
+      "type": "hermite",
+      "input": "particle.age",
+      "x": [
+        0.0,
+        11.0,
+        15,
+        17.0
+      ],
+      "y": [
+        0.0,
+        0.8,
+        0.8,
+        0.1
+      ]
+    }
+  },
+  "components": {
+    "display_type": "fixed",
+    "default_environment_data": {
+      "disp_tol": 0.01
+    },
+    "expression_sprite": {
+      "sprite": "(particle.age <= 1) ? \"empty\" : \"flash\""
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": 17
+    },
+    "expression_translation": {
+      "z": 0.2,
+      "abs_z": "emitter_variable.offset_z",
+      "abs_y": "emitter_variable.offset_y"
+    },
+    "expression_rotation": {
+      "z": "Math.PI * -0.25"
+    },
+    "emitter_rate_instant": {
+      "amount": 1
+    },
+    "emitter_lifetime_expression": {
+      "max_lifetime": 4
+    },
+    "expression_scale": {
+      "x": "_$size_ * _$sizefactor_",
+      "y": "_$size_ * _$sizefactor_",
+      "z": 1.0
+    }
+  }
+}

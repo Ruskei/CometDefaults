@@ -1,0 +1,143 @@
+{
+  "macros": {
+    "_$dragfactor_": {
+      "type": "hermite",
+      "input": "emitter.age",
+      "x": [
+        0.0,
+        60.0,
+        100.0
+      ],
+      "y": [
+        0.0,
+        0.4,
+        1.0
+      ]
+    },
+    "_$attractormass_": {
+      "type": "linear",
+      "input": "emitter.age",
+      "x": [
+        0.0,
+        40.0,
+        85.0,
+        95.0,
+        100.0
+      ],
+      "y": [
+        0.0,
+        0.05,
+        0.5,
+        5.0,
+        15.0
+      ]
+    },
+    "_$sizefactor_": {
+      "type": "hermite",
+      "input": "particle.age",
+      "x": [
+        0.0,
+        50.0,
+        100.0
+      ],
+      "y": [
+        1.0,
+        0.8,
+        0.0
+      ]
+    }
+  },
+  "components": {
+    "randoms": {
+      "particle": 6
+    },
+    "on_emitter_init": [
+      {
+        "expressions": [
+          "emitter_variable.x = 8"
+        ]
+      }
+    ],
+    "constant_lightdata": {
+      "sky": 15,
+      "block": 15
+    },
+    "on_particle_init": [
+      {
+        "expressions": [
+          "particle_variable.rot_dir = Math.random() * 2 - 1"
+        ]
+      }
+    ],
+    "default_environment_data": {
+      "loc_tol": 0.07,
+      "col_tol": 24
+    },
+    "random_sprite": {
+      "sprite": "minecraft_hieroglyphs",
+      "min": 0,
+      "max": 25
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": 100
+    },
+    "emitter_rate_instant": {
+      "amount": 20
+    },
+    "timed_emitter_lifetime": {
+      "max_lifetime": 120
+    },
+    "attractor_position": {
+      "type": "gravity_linear",
+      "factor": 1,
+      "attractors": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "mass": "_$attractormass_",
+          "radius": 0.1
+        }
+      ],
+      "on_hit_attractor": [
+        "particle_die"
+      ]
+    },
+    "motion_position": {
+      "random_velocity": {
+        "magnitude": "0.3 + Math.random() * 0.6"
+      },
+      "drag": "_$dragfactor_",
+      "restitution": 0.1
+    },
+    "gradient_color": {
+      "interpolant": "particle.age + Math.round(particle_variable.random6) * 200",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(254, 194, 3, 128)"
+        },
+        {
+          "index": 100.0,
+          "color": "new Color(255, 118, 2, 255)"
+        },
+        {
+          "index": 200.0,
+          "color": "new Color(254, 165, 0, 128)"
+        },
+        {
+          "index": 300.0,
+          "color": "new Color(241, 80, 0, 255)"
+        }
+      ]
+    },
+    "expression_rotation": {
+      "z": "particle_variable.random5 * Math.PI * 2 + particle.age * 0.08 * particle_variable.rot_dir"
+    },
+    "expression_scale": {
+      "x": "8 + particle_variable.random * 8 * _$sizefactor_",
+      "y": "8 + particle_variable.random * 8 * _$sizefactor_",
+      "z": "1"
+    }
+  }
+}

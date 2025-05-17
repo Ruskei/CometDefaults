@@ -1,0 +1,92 @@
+{
+  "listed": false,
+  "macros": {
+    "_$size_": "8 + particle_variable.random * 4",
+    "_$sizefactor_": {
+      "type": "hermite",
+      "input": "particle.age / particle.max_life",
+      "x": [
+        0.0,
+        1.0
+      ],
+      "y": [
+        1.0,
+        1.25
+      ]
+    },
+    "_$amount_": 12
+  },
+  "components": {
+    "display_type": "fixed",
+    "randoms": {
+      "particle": 2
+    },
+    "on_emitter_init": [
+      {
+        "expressions": [
+          "emitter_variable.interval_random = MathExtras.getIntervalRandom(0, Math.PI * 2, _$amount_)"
+        ]
+      }
+    ],
+    "on_particle_init": [
+      {
+        "expressions": [
+          "particle_variable.rot = emitter_variable.interval_random.gen()"
+        ]
+      }
+    ],
+    "particle_lifetime_expression": {
+      "max_lifetime": 6
+    },
+    "expression_scale": {
+      "x": "_$size_ * _$sizefactor_",
+      "y": "_$size_ * _$sizefactor_",
+      "z": 1
+    },
+    "emitter_rate_instant": {
+      "amount": "_$amount_"
+    },
+    "expression_rotation": {
+      "z": "particle_variable.rot"
+    },
+    "expression_translation": {
+      "z": 0.1,
+      "abs_z": "emitter_variable.offset_z",
+      "abs_y": "emitter_variable.offset_y"
+    },
+    "gradient_color": {
+      "interpolant": "particle.age",
+      "data": [
+        {
+          "index": 0.0,
+          "color": "new Color(255, 255, 255, 235)"
+        },
+        {
+          "index": 6.0,
+          "color": "new Color(235, 235, 235, 128)"
+        }
+      ]
+    },
+    "flipbook_sprite": {
+      "input": "particle.age",
+      "sprites": [
+        {
+          "index": 0.0,
+          "sprite": "sonic_boom_spike_1.0"
+        },
+        {
+          "index": 2.0,
+          "sprite": "sonic_boom_spike_1.1"
+        },
+        {
+          "index": 4.0,
+          "sprite": "sonic_boom_spike_1.2"
+        },
+        {
+          "index": 6.0,
+          "sprite": "sonic_boom_spike_1.3"
+        }
+      ]
+    }
+  }
+}

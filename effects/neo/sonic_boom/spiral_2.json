@@ -1,0 +1,63 @@
+{
+  "listed": false,
+  "macros": {
+    "_$size_": "(8 + particle_variable.random2 * 20)",
+    "_$sizefactor_": {
+      "type": "hermite",
+      "input": "particle.age / particle.max_life",
+      "x": [
+        0.0,
+        1.0
+      ],
+      "y": [
+        1,
+        0.8
+      ]
+    }
+  },
+  "components": {
+    "display_type": "fixed",
+    "on_particle_init": [
+      {
+        "expressions": [
+          "particle_variable.direction=Math.round(Math.random()) * 2 - 1"
+        ]
+      }
+    ],
+    "randoms": {
+      "particle": 2
+    },
+    "flipbook_sprite": {
+      "input": "particle.age / particle.max_life * 5",
+      "sprites": {
+        "0": "(particle_variable.direction == 1) ? \"spiral_2.0\" : \"spiral_2.5\"",
+        "0.5": "(particle_variable.direction == 1) ? \"spiral_2.1\" : \"spiral_2.6\"",
+        "1.5": "(particle_variable.direction == 1) ? \"spiral_2.2\" : \"spiral_2.7\"",
+        "2.5": "(particle_variable.direction == 1) ? \"spiral_2.3\" : \"spiral_2.8\"",
+        "3.5": "(particle_variable.direction == 1) ? \"spiral_2.4\" : \"spiral_2.9\""
+      }
+    },
+    "expression_translation": {
+      "z": 0.1,
+      "abs_z": "emitter_variable.offset_z",
+      "abs_y": "emitter_variable.offset_y"
+    },
+    "emitter_rate_steady": {
+      "spawn_rate": "(emitter.age >= emitter_variable.offset && emitter.age <= emitter_variable.offset + 4) ? 20 : 0"
+    },
+    "particle_lifetime_expression": {
+      "max_lifetime": "3 + particle_variable.random2 * 5"
+    },
+    "expression_rotation": {
+      "z": "particle_variable.random * Math.PI * 2 + 0.03 * particle.age * particle_variable.direction"
+    },
+    "constant_color": {
+      "color": "emitter_variable.color"
+    },
+    "expression_scale": {
+      "x": "_$size_ * _$sizefactor_",
+      "y": "_$size_ * _$sizefactor_",
+      "z": 1.0
+    }
+  }
+}
