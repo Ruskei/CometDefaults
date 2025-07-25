@@ -28,8 +28,22 @@
         0.00
       ]
     },
-    "attractor_mass": {
+    "_$scale_": {
       "type": "hermite",
+      "input": "emitter.age",
+      "x": [
+        0.0,
+        40,
+        60.0
+      ],
+      "y": [
+        1,
+        1,
+        1
+      ]
+    },
+    "attractor_mass": {
+      "type": "linear",
       "input": "emitter.age",
       "x": [
         0.0,
@@ -37,15 +51,17 @@
         30.0,
         40.0,
         65.0,
-        75.0
+        75.0,
+        100.0
       ],
       "y": [
         0.001,
-        0.01,
-        0.07,
-        0.2,
+        0.03,
+        0.15,
         0.4,
-        0.6
+        0.8,
+        10,
+        20
       ]
     }
   },
@@ -64,7 +80,7 @@
       "radius": "emitter_variable.x * (1.0 - emitter.age / 100.0)"
     },
     "particle_lifetime_expression": {
-      "expiration_expression": "emitter.age - 100.0"
+      "expiration_expression": "emitter.age - 80.0"
     },
     "emitter_rate_steady": {
       "spawn_rate": "40.0 + emitter.age"
@@ -117,8 +133,8 @@
       ]
     },
     "expression_scale": {
-      "x": "particle_variable.random * 2.0",
-      "y": "particle_variable.random * 2.0",
+      "x": "particle_variable.random * 2.0 * _$scale_",
+      "y": "particle_variable.random * 2.0 * _$scale_",
       "z": "1"
     }
   }
